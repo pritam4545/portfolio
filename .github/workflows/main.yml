@@ -1,0 +1,49 @@
+name: portfolio-using-actions
+
+on:
+  push:
+    branches:
+        - master
+
+jobs:
+  portfolio:
+     runs-on: self-hosted
+
+     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: update the system
+        run: |
+          sudo apt update -y
+          sudo apt upgrade -y
+
+      - name: install the nodejs
+        run: |
+          sudo apt-get install -y curl
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
+
+      - name: verify the installion
+        run: |
+          node -v
+          npm -v
+
+      - name: install dependencies
+        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
+        run: npm install
+
+      - name: update dependencies
+        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
+        run: |
+          npm outdated
+          npm update
+          npm outdated
+
+      - name: build the project
+        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
+        run: npm run build
+
+      - name: start the server
+        run: npm run dev -- --host
+      
