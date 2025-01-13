@@ -19,11 +19,6 @@ jobs:
       - name: install the nodejs
         uses: actions/setup-node@v3
 
-      - name: verify the installion
-        run: |
-          node -v
-          npm -v
-
       - name: install dependencies
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
         run: npm install
