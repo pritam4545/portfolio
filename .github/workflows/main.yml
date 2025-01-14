@@ -25,13 +25,6 @@ jobs:
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
         run: npm install
 
-      - name: update dependencies
-        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
-        run: |
-          npm outdated
-          npm update
-          npm outdated
-
       - name: build the project
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
         run: npm run build
