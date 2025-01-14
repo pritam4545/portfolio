@@ -25,10 +25,15 @@ jobs:
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
         run: npm install
 
+      - name: install pm2 
+        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
+        run: npm install -g pm2
+
       - name: build the project
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
         run: npm run build
 
-      - name: start the server
-        run: npm run dev -- --host
+      - name: start the server using pm2
+        working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
+        run: pm2 start "npm run dev -- --host"
       
