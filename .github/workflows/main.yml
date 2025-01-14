@@ -18,6 +18,8 @@ jobs:
 
       - name: install the nodejs
         uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
       - name: install dependencies
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
