@@ -37,5 +37,6 @@ jobs:
            pm2 save
            sudo env PATH=$PATH:/home/ubuntu/actions-runner/_work/_tool/node/18.20.5/x64/bin \
              /home/ubuntu/actions-runner/_work/_tool/node/18.20.5/x64/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+           pm2 startup
 
 
