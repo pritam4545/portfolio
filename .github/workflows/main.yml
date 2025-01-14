@@ -35,5 +35,5 @@ jobs:
 
       - name: start the server using pm2
         working-directory: /home/ubuntu/actions-runner/_work/Shraddha-Portfolio/Shraddha-Portfolio
-        run: pm2 start "npm run dev -- --host"
+        run: pm2 start "npm run dev -- --host" --name my-react-portfolio
       
